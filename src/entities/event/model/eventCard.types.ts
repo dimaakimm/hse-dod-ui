@@ -1,5 +1,4 @@
-import { IAudience } from "@/entities/audience";
-import { ILocation } from "@/entities/location";
+import { IFilter } from "@/entities/filters";
 
 export interface EventCardProps {
   id: string;
