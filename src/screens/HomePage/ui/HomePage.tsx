@@ -41,7 +41,6 @@ export const HomePage = () => {
             <STiming>19 апреля, 10:00, пл. Октябрьская, 1 </STiming>
           </SSubContent>
         </SBannerContent>
-        <SBannerButton>ЗАРЕГИСТРИРОВАТЬСЯ</SBannerButton>
       </SBanner>
       <SCardContainer>
         {AudienceCards.map((item) => (
