@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "antd";
 
-export const SButtonLink = styled(Button)`
+export const SButtonLink = styled(Button).attrs({ target: "_blank" })`
   &.ant-btn.ant-btn-color-default.ant-btn-variant-outlined {
     border-radius: 10px;
     width: 40px;

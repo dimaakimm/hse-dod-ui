@@ -1,5 +1,4 @@
 import { EventPage } from "@/screens/EventPage";
-import { getTranslations } from "next-intl/server";
 import { IFilter } from "@/entities/filters";
 
 export default async function EventDetailsPage({

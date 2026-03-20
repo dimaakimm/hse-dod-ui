@@ -1,9 +1,9 @@
 "use client";
 
-import { Globe, TG, VK, HSELogo } from "@/shared/assets";
+import { Globe, TG, VK, HSELogo, Max } from "@/shared/assets";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { routes } from "@/shared/config";
+import { externalLinks, routes } from "@/shared/config";
 import {
   SButton,
   SButtonsSection,
@@ -40,9 +40,10 @@ export const Header = () => {
         )}
       </SLogoWrapper>
       <SButtonsSection>
-        <ButtonLink icon={<Globe />} />
-        <ButtonLink icon={<TG />} />
-        <ButtonLink icon={<VK />} />
+        <ButtonLink href={externalLinks.MAX_LINK} icon={<Max />} />
+        <ButtonLink href={externalLinks.HSE_LINK} icon={<Globe />} />
+        <ButtonLink href={externalLinks.TG_LINK} icon={<TG />} />
+        <ButtonLink href={externalLinks.VK_LINK} icon={<VK />} />
       </SButtonsSection>
     </SHeader>
   );

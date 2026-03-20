@@ -1,12 +1,22 @@
 "use client";
 
-import { SEventListPage, SMainContent, STitle } from "./eventsListPage.styles";
-import { SpecializationOptions } from "@/entities/specialization";
-import { Select } from "@/shared/ui/Select/ui/Select";
 import { FC, useState } from "react";
 import { SelectProps } from "antd";
+
+import { SpecializationOptions } from "@/entities/specialization";
+import { Select } from "@/shared/ui/Select/ui/Select";
 import { EventCard, useGetEventsListTitle } from "@/entities/event";
 import { EventsListPageProps } from "../model/eventsListPage.types";
+
+import {
+  SEventListPage,
+  SMainContent,
+  STitle,
+  SEventsTimeline,
+  STimelineItem,
+  STimelineMarker,
+  STimelineDot,
+} from "./eventsListPage.styles";
 
 const mockedEvents = [
   {
@@ -18,6 +28,20 @@ const mockedEvents = [
   },
   {
     id: "2987979-123123",
+    title: "Родительский клуб  “Как помочь ребенку перед ЕГЭ”",
+    time: "10:15-11:00",
+    place: "3 этаж - Малый зал ",
+    active: false,
+  },
+  {
+    id: "3278973123-123123",
+    title: "Родительский клуб  “Как помочь ребенку перед ЕГЭ”",
+    time: "10:15-11:00",
+    place: "3 этаж - Малый зал ",
+    active: true,
+  },
+  {
+    id: "47867823-123123",
     title: "Родительский клуб  “Как помочь ребенку перед ЕГЭ”",
     time: "10:15-11:00",
     place: "3 этаж - Малый зал ",
@@ -56,13 +80,21 @@ export const EventsListPage: FC<EventsListPageProps> = ({ filter }) => {
         placeholder={"Профили обучения"}
         options={SpecializationOptions}
       />
+
       <SMainContent>
         <STitle>{title}</STitle>
-        <div style={{ flexDirection: "column", display: "flex", gap: 50 }}>
+
+        <SEventsTimeline>
           {mockedEvents.map((item) => (
-            <EventCard filter={filter} {...item} key={item.title} />
+            <STimelineItem key={item.id}>
+              <STimelineMarker>
+                <STimelineDot $active={item.active} />
+              </STimelineMarker>
+
+              <EventCard filter={filter} {...item} />
+            </STimelineItem>
           ))}
-        </div>
+        </SEventsTimeline>
       </SMainContent>
     </SEventListPage>
   );

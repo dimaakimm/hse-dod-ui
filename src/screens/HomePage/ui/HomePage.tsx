@@ -1,48 +1,40 @@
 "use client";
 
 import {
-  SAudienceText,
-  SBanner,
-  SBannerButton,
-  SBannerContent,
-  SBannerImageWrapper,
-  SBannerStarsWrapper,
   SCardContainer,
   SHomePage,
-  SImage,
-  SSubContent,
-  STiming,
-  STitle,
+  SSwiper,
+  SSwiperSlide,
 } from "./homePage.styles";
-import { BannerStars, CrowBanner } from "@/shared/assets";
 import { AudienceCard } from "@/entities/audience";
 import { AudienceCards } from "@/entities/audience/lib/audienceCards";
+import { BannerMain } from "@/widgets/BannerMain";
+import { BannerCloudsBalloons } from "@/widgets/BannerCloudsBalloons";
+import { BannerCrowBalloons } from "@/widgets/BannerCrowBalloons";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const HomePage = () => {
   return (
     <SHomePage>
-      <SBanner>
-        <SBannerImageWrapper>
-          <SImage src={CrowBanner.src} fill alt={"crow"} />
-        </SBannerImageWrapper>
-        <SBannerStarsWrapper>
-          <SImage src={BannerStars.src} fill alt={"stars"} />
-        </SBannerStarsWrapper>
-
-        <SBannerContent>
-          <STitle>
-            ДЕНЬ
-            <br /> ОТКРЫТЫХ ДВЕРЕЙ
-            <br /> ВЫСШЕЙ ШКОЛЫ
-            <br /> ЭКОНОМИКИ
-          </STitle>
-          <SSubContent>
-            <SAudienceText>для поступающих в бакалавриат</SAudienceText>
-            <STiming>19 апреля, 10:00, пл. Октябрьская, 1 </STiming>
-          </SSubContent>
-        </SBannerContent>
-        <SBannerButton>ЗАРЕГИСТРИРОВАТЬСЯ</SBannerButton>
-      </SBanner>
+      <SSwiper
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+      >
+        <SSwiperSlide>
+          <BannerMain />
+        </SSwiperSlide>
+        <SSwiperSlide>
+          <BannerCloudsBalloons />
+        </SSwiperSlide>
+        <SSwiperSlide>
+          <BannerCrowBalloons />
+        </SSwiperSlide>
+      </SSwiper>
       <SCardContainer>
         {AudienceCards.map((item) => (
           <AudienceCard key={item.title} {...item} />
