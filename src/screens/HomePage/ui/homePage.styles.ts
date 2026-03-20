@@ -34,6 +34,10 @@ export const SSwiper = styled(Swiper)`
   width: 100%;
   height: 500px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    height: 600px;
+  }
+
   .swiper-wrapper {
     height: 100%;
   }
