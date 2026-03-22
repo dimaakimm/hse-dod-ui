@@ -77,6 +77,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",
+                overflow: "hidden",
               }}
             >
               <Header />

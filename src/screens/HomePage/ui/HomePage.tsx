@@ -1,10 +1,10 @@
 "use client";
 
 import {
-    SCardContainer,
-    SHomePage,
-    SSwiper,
-    SSwiperSlide,
+  SCardContainer,
+  SHomePage,
+  SSwiper,
+  SSwiperSlide,
 } from "./homePage.styles";
 import { AudienceCard } from "@/entities/audience";
 import { AudienceCards } from "@/entities/audience/lib/audienceCards";
@@ -16,30 +16,30 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export const HomePage = () => {
-    return (
-        <SHomePage>
-            <SSwiper
-                spaceBetween={30}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Pagination]}
-            >
-                <SSwiperSlide>
-                    <BannerMain />
-                </SSwiperSlide>
-                <SSwiperSlide>
-                    <BannerCloudsBalloons />
-                </SSwiperSlide>
-                <SSwiperSlide>
-                    <BannerCrowBalloons />
-                </SSwiperSlide>
-            </SSwiper>
-            <SCardContainer>
-                {AudienceCards.map((item) => (
-                    <AudienceCard key={item.title} {...item} />
-                ))}
-            </SCardContainer>
-        </SHomePage>
-    );
+  return (
+    <SHomePage>
+      <SSwiper
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+      >
+        <SSwiperSlide>
+          <BannerMain />
+        </SSwiperSlide>
+        <SSwiperSlide>
+          <BannerCloudsBalloons />
+        </SSwiperSlide>
+        <SSwiperSlide>
+          <BannerCrowBalloons />
+        </SSwiperSlide>
+      </SSwiper>
+      <SCardContainer>
+        {AudienceCards.map((item) => (
+          <AudienceCard key={item.title} {...item} />
+        ))}
+      </SCardContainer>
+    </SHomePage>
+  );
 };

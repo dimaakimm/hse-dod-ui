@@ -5,6 +5,7 @@ import { AudienceArray } from "@/entities/audience";
 import { EventsListPage } from "@/screens/EventsListPage";
 import { LocationsArray } from "@/entities/location";
 import { IFilter } from "@/entities/filters";
+import { DirectionsArray } from "@/entities/directions";
 
 export default async function EventsAudiencePage({
   params,
@@ -13,7 +14,9 @@ export default async function EventsAudiencePage({
 }) {
   const { filter } = await params;
 
-  if (![...LocationsArray, ...AudienceArray].includes(filter)) {
+  if (
+    ![...LocationsArray, ...AudienceArray, ...DirectionsArray].includes(filter)
+  ) {
     notFound();
   }
 

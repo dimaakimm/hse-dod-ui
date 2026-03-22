@@ -12,5 +12,13 @@ export const useGetEventsListTitle = (filter: IFilter) => {
       return t("bigHall");
     case "smallHall":
       return t("smallHall");
+    case "design":
+      return t("design");
+    case "humanities":
+      return t("humanities");
+    case "math":
+      return t("math");
+    case "social":
+      return t("social");
   }
 };

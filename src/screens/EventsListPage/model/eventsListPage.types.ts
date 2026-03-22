@@ -1,6 +1,5 @@
-import { ILocation } from "@/entities/location";
-import { IAudience } from "@/entities/audience";
+import { IFilter } from "@/entities/filters";
 
 export interface EventsListPageProps {
-  filter: ILocation | IAudience;
+  filter: IFilter;
 }

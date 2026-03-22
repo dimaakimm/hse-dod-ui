@@ -17,6 +17,9 @@ import {
   STimelineMarker,
   STimelineDot,
 } from "./eventsListPage.styles";
+import { IDirection } from "@/entities/directions";
+import { AudienceArray } from "@/entities/audience";
+import { IFilter } from "@/entities/filters";
 
 const mockedEvents = [
   {
@@ -63,23 +66,29 @@ const mockedEvents = [
   },
 ];
 
+const isAudience = (value: IFilter): boolean => {
+  return AudienceArray.some((item) => item === value);
+};
+
 export const EventsListPage: FC<EventsListPageProps> = ({ filter }) => {
-  const [activeOption, setActiveOption] = useState<
-    "social" | "design" | "math" | "humanities"
-  >();
+  const [activeOption, setActiveOption] = useState<IDirection>();
   const title = useGetEventsListTitle(filter);
+
+  const showFilter = isAudience(filter);
 
   const onOptionChange: SelectProps["onChange"] = (value) =>
     setActiveOption(value);
 
   return (
     <SEventListPage>
-      <Select
-        value={activeOption}
-        onChange={onOptionChange}
-        placeholder={"Профили обучения"}
-        options={SpecializationOptions}
-      />
+      {showFilter && (
+        <Select
+          value={activeOption}
+          onChange={onOptionChange}
+          placeholder={"Профили обучения"}
+          options={SpecializationOptions}
+        />
+      )}
 
       <SMainContent>
         <STitle>{title}</STitle>

@@ -10,10 +10,10 @@ export const SPublicLayout = styled.div`
     #2a76de 100%
   );
   position: relative;
-  width: 100%;
-  height: 100%;
+  flex: 1;
   min-width: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 export const SBannerStarsWrapper = styled.div`

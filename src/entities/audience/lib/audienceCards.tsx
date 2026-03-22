@@ -33,7 +33,7 @@ export const AudienceCards: AudienceCardProps[] = [
   },
   {
     link: routes.MAP_PAGE,
-    title: "карта мероприятия",
+    title: "интерактивная карта мероприятия",
     BackgroundImage: AudienceCardBackgroundCrowMap,
   },
 ];
