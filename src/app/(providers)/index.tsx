@@ -6,12 +6,14 @@ import { ThemeProvider } from "./ThemeProvider";
 import { RQClientProvider } from "./RQClientProvider";
 
 import "antd/dist/reset.css";
+import { SSEProvider } from "./SSEProvider";
 
 export const WithProviders: FC<PropsWithChildren> = ({ children }) => {
   return (
     <RQClientProvider>
       <StyledComponentsProvider>
         <AntdRegistry>
+          <SSEProvider />
           <ThemeProvider>{children}</ThemeProvider>
         </AntdRegistry>
       </StyledComponentsProvider>

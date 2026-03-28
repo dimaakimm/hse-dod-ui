@@ -5,7 +5,11 @@ import { SelectProps } from "antd";
 
 import { SpecializationOptions } from "@/entities/specialization";
 import { Select } from "@/shared/ui/Select/ui/Select";
-import { EventCard, useGetEventsListTitle } from "@/entities/event";
+import {
+  EventCard,
+  useGetEventsList,
+  useGetEventsListTitle,
+} from "@/entities/event";
 import { EventsListPageProps } from "../model/eventsListPage.types";
 
 import {
@@ -73,6 +77,8 @@ const isAudience = (value: IFilter): boolean => {
 export const EventsListPage: FC<EventsListPageProps> = ({ filter }) => {
   const [activeOption, setActiveOption] = useState<IDirection>();
   const title = useGetEventsListTitle(filter);
+
+  const a = useGetEventsList();
 
   const showFilter = isAudience(filter);
 
