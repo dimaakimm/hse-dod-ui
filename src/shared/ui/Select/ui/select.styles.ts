@@ -10,12 +10,22 @@ export const SSelect = styled(Select)`
     font-size: 30px;
     padding: 16px 40px;
     width: 480px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+      font-size: 20px;
+      padding: 8px;
+      width: 100%;
+    }
   }
 
   &.ant-select .ant-select-placeholder {
     color: #fff;
     text-transform: uppercase;
     font-size: 30px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+      font-size: 20px;
+    }
   }
 
   &.ant-select .ant-select-suffix .anticon {

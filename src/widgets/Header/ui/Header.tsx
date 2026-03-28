@@ -13,11 +13,13 @@ import {
 import { ButtonLink } from "@/shared/ui";
 import Image from "next/image";
 import { MouseEventHandler } from "react";
+import { useDevice } from "@/shared/hooks";
 
 export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === routes.HOME_PAGE;
+  const { isMobile } = useDevice();
 
   const handleBackButtonClick: MouseEventHandler<HTMLElement> = (e) => {
     if (window.history.length > 1) {
@@ -31,9 +33,11 @@ export const Header = () => {
   return (
     <SHeader>
       <SLogoWrapper>
-        <Link href={routes.HOME_PAGE}>
-          <Image alt={"hse logo"} src={HSELogo.src} width={86} height={86} />
-        </Link>
+        {!isMobile && (
+          <Link href={routes.HOME_PAGE}>
+            <Image alt={"hse logo"} src={HSELogo.src} width={86} height={86} />
+          </Link>
+        )}
 
         {!isHomePage && (
           <SButton onClick={handleBackButtonClick}>НАЗАД</SButton>

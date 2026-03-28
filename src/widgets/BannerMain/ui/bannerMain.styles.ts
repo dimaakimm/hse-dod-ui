@@ -49,6 +49,10 @@ export const SBannerImageWrapper = styled.div`
   bottom: -76%;
   left: -28%;
   pointer-events: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    display: none;
+  }
 `;
 
 export const SBannerStarsWrapper = styled.div`

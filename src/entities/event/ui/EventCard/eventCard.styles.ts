@@ -17,6 +17,10 @@ export const SCard = styled.div<SEventCardProps>`
     css`
       color: rgba(35, 86, 211, 1);
     `}
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    padding: 8px;
+  }
 `;
 
 export const STime = styled.div`
@@ -33,6 +37,10 @@ export const SMainInfoSection = styled.div`
 export const STitle = styled.div`
   font-weight: 400;
   font-size: 25px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    font-size: 20px;
+  }
 `;
 
 export const SLocation = styled.div`

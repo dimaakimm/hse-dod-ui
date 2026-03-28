@@ -5,6 +5,7 @@ export { default as StarsBackground } from "./StarsBackground.png";
 export { default as Balloons } from "./Balloons.png";
 export { default as CloudsStars } from "./CloudsStars.png";
 export { default as CrowBalloons } from "./CrowBalloons.png";
+export { default as Crow } from "./Crow.png";
 
 export * from "./audienceCardsBackgrounds";
 export * from "./map";

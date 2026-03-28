@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled, { css } from "styled-components";
+import Image from "next/image";
 
 interface IRectProps {
   $top: string;
@@ -113,11 +114,28 @@ export const SRightColumn = styled.div`
     order: 3;
   }
 `;
+export const SLegend = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
 
 export const SLegendList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
+`;
+
+export const SImage = styled(Image)`
+  position: relative;
+  align-self: end;
+  justify-self: end;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxLaptops}) {
+    position: absolute;
+    bottom: -30px;
+    right: -50px;
+  }
 `;
 
 export const SLegendItem = styled.div`

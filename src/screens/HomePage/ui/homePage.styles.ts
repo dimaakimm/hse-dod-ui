@@ -11,6 +11,10 @@ export const STitle = styled.div`
   font-size: 56px;
   line-height: 1;
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    font-size: 40px;
+  }
 `;
 
 export const SSubContent = styled.div`

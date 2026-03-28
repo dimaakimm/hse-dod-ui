@@ -9,6 +9,10 @@ export const SEventListPage = styled.div`
   display: flex;
   flex-direction: column;
   gap: 44px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    padding: 32px 20px;
+  }
 `;
 
 export const SMainContent = styled.div`
@@ -17,11 +21,19 @@ export const SMainContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 46px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    gap: 32px;
+  }
 `;
 
 export const STitle = styled.div`
   font-weight: 400;
   font-size: 60px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    font-size: 20px;
+  }
 `;
 
 export const SEventsTimeline = styled.div`
@@ -29,6 +41,10 @@ export const SEventsTimeline = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    gap: 8px;
+  }
 
   &::before {
     content: "";
@@ -49,6 +65,10 @@ export const STimelineItem = styled.div`
   column-gap: 14px;
   align-items: start;
   position: relative;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
+    column-gap: 0;
+  }
 `;
 
 export const STimelineMarker = styled.div`
