@@ -10,3 +10,5 @@ export * from "./Stairs";
 export * from "./ArrowDownLeft";
 export * from "./ArrowDownRight";
 export * from "./Micro";
+export * from "./Cross";
+export * from "./Bell";

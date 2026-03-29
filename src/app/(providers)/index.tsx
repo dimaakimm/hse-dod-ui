@@ -7,16 +7,19 @@ import { RQClientProvider } from "./RQClientProvider";
 
 import "antd/dist/reset.css";
 import { SSEProvider } from "./SSEProvider";
+import { ToastBarProvider } from "./ToastBarProvider";
 
 export const WithProviders: FC<PropsWithChildren> = ({ children }) => {
   return (
     <RQClientProvider>
-      <StyledComponentsProvider>
-        <AntdRegistry>
-          <SSEProvider />
-          <ThemeProvider>{children}</ThemeProvider>
-        </AntdRegistry>
-      </StyledComponentsProvider>
+      <ToastBarProvider>
+        <StyledComponentsProvider>
+          <AntdRegistry>
+            <SSEProvider />
+            <ThemeProvider>{children}</ThemeProvider>
+          </AntdRegistry>
+        </StyledComponentsProvider>
+      </ToastBarProvider>
     </RQClientProvider>
   );
 };
